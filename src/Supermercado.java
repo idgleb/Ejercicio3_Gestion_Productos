@@ -28,10 +28,7 @@ public class Supermercado {
 
         boolean agregado = false;
         for (int i = 0; i < inventario.length && !agregado; i++) {
-            if(inventario[i] == null){
-                inventario[i] = new Producto(nombreProducto, precio, cantidad, this);
-                agregado = true;
-            }else if(inventario[i].getNombre() == nombreProducto){
+            if (nombreProducto.equals(inventario[i].getNombre())) {
                 inventario[i].aumentarCantidadEnStock(cantidad);
                 inventario[i].setPrecio(precio);
                 agregado = true;
@@ -47,8 +44,9 @@ public class Supermercado {
             }
             newInventario[inventario.length] = new Producto(nombreProducto, precio, cantidad, this);
             inventario = newInventario;
-            JOptionPane.showMessageDialog(null, "El producto fue agregado a Stock con exito");
+            JOptionPane.showMessageDialog(null, "El producto fue agregado a Stock con exito NEW");
         }
+
     }
 
     public String getNombre() {

@@ -15,8 +15,13 @@ public class CarritoCompras {
 
     public double calcularTotalCompra() {
         double total = 0;
+        int totalCantidadProductos = 0;
         for (int i = 0; i < productos.length; i++) {
             total += productos[i].getPrecio()*cantidadProductosEnCarrito[i];
+            totalCantidadProductos += cantidadProductosEnCarrito[i];
+        }
+        if (totalCantidadProductos >= this.getSupermercado().getCantidadDeProductosParaTenerDiscuento()) {
+            total = total - total/this.getSupermercado().getPorcientosDiscuento();
         }
         return total;
     }
@@ -55,12 +60,7 @@ public class CarritoCompras {
 
         boolean agregado = false;
         for (int i = 0; i < productos.length && !agregado; i++) {
-            if (productos[i] == null) {
-                productos[i] = inventario[posicion];
-                cantidadProductosEnCarrito[i] = cantidad;
-                inventario[posicion].desminuirCantidadEnStock(cantidad);
-                agregado = true;
-            } else if (productos[i].getNombre() == nombreProducto) {
+            if (nombreProducto.equals(productos[i].getNombre())) {
                 cantidadProductosEnCarrito[i] += cantidad;
                 inventario[posicion].desminuirCantidadEnStock(cantidad);
                 agregado = true;
