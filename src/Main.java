@@ -14,8 +14,7 @@ public class Main {
                     null,
                     "Supermercado COTO\n"
                             + supermercado.imprimirInventario()
-                            + carritoCompras.imprimirCarrito()
-                            + "\n Total: " + carritoCompras.calcularTotalCompra(),
+                            + carritoCompras.imprimirCarrito(),
                     "Ursol",
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
@@ -43,8 +42,7 @@ public class Main {
                     break;
                 case 3:
                     //Mostrar Carrito
-                    JOptionPane.showMessageDialog(null,
-                            carritoCompras.imprimirCarrito() + "\n Total: " + carritoCompras.calcularTotalCompra());
+                    JOptionPane.showMessageDialog(null,carritoCompras.imprimirCarrito());
                     break;
                 case 4:
                     //Salir

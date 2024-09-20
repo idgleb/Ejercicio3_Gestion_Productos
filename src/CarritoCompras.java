@@ -34,6 +34,7 @@ public class CarritoCompras {
             caritoString += "Cantidad en carrito: " + cantidadProductosEnCarrito[i] + "\n";
             caritoString += "_______________________\n";
         }
+        caritoString += "\n Total: " + calcularTotalCompra();
         return caritoString;
     }
 
