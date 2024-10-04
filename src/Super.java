@@ -1,6 +1,7 @@
+
 import javax.swing.*;
 
-public class Main {
+public class Super {
     public static void main(String[] args) {
 
         Supermercado supermercado = new Supermercado("COTO", 10, 3);
